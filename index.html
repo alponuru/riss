@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RISS is an independent design practice working across visual communication, identity, editorial design and spatial concepts.">
+  <meta name="theme-color" content="#e9e7df">
+  <title>RISS — Independent Design Practice</title>
+  <style>
+    :root{--paper:#e9e7df;--ink:#1b211e;--muted:#73766f;--line:rgba(27,33,30,.22);--acid:#d5f05b;--serif:Georgia,serif;--sans:Arial,Helvetica,sans-serif;--mono:"Courier New",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}button{font:inherit}
+    .topbar{height:68px;padding:0 4.5vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:5}
+    .wordmark{font-size:21px;font-weight:800;letter-spacing:-.09em}.wordmark span{font-weight:400}
+    .topmeta,.nav a,.eyebrow,.index,.caption,.footer-note{font:10px var(--mono);letter-spacing:.09em;text-transform:uppercase}
+    .topmeta{color:var(--muted)}.nav{display:flex;gap:30px}.nav a{transition:opacity .2s}.nav a:hover{opacity:.45}
+    .hero{min-height:calc(88vh - 68px);padding:8vh 4.5vw 5vh;display:grid;grid-template-columns:1.1fr .9fr;gap:4vw;align-items:end;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+    .hero-kicker{margin:0 0 28px}.eyebrow{color:var(--muted)}
+    h1{font-size:clamp(100px,20vw,290px);line-height:.72;letter-spacing:-.115em;font-weight:600;margin:0 0 5vw -.025em}
+    .hero-sub{font-size:clamp(18px,2.1vw,29px);line-height:1.35;letter-spacing:-.045em;max-width:470px;margin:0}
+    .hero-right{align-self:end;padding:0 0 8px 5vw}.hero-right p{max-width:330px;font-size:14px;line-height:1.7;margin:0 0 28px}
+    .hero-index{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:12px;color:var(--muted)}
+    .orbital{position:absolute;width:29vw;aspect-ratio:1;border:1px solid rgba(27,33,30,.2);border-radius:50%;right:9vw;top:9vh;pointer-events:none}
+    .orbital:before,.orbital:after{content:"";position:absolute;inset:13%;border:1px solid rgba(27,33,30,.17);border-radius:50%;transform:rotate(34deg) scaleX(.48)}
+    .orbital:after{transform:rotate(-34deg) scaleX(.48)}
+    .section{padding:110px 4.5vw;border-bottom:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:58px}.section-head h2{font-size:clamp(36px,6vw,76px);letter-spacing:-.075em;font-weight:500;margin:0}.section-head .index{color:var(--muted)}
+    .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px 22px}
+    .project:nth-child(even){margin-top:100px}.project-visual{aspect-ratio:1.28;background:#d1d0c6;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .project-visual:after{content:"";position:absolute;inset:15px;border:1px solid rgba(27,33,30,.18);pointer-events:none}
+    .visual-a{background:linear-gradient(135deg,#b5b8a9,#e0ded2 55%,#8e9587)}.visual-b{background:#c8c4b8}.visual-c{background:linear-gradient(150deg,#dedbd0,#b8b9ad)}.visual-d{background:#aeb3a8}
+    .visual-a .shape{width:55%;height:68%;border:1px solid #333b34;transform:rotate(-13deg);position:relative}
+    .visual-a .shape:before{content:"";position:absolute;width:70%;height:70%;border:1px solid #333b34;left:20%;top:20%}
+    .visual-b .shape{font:clamp(70px,13vw,170px) var(--serif);letter-spacing:-.1em;color:#454a42;transform:rotate(-8deg)}
+    .visual-c .shape{width:70%;height:48%;border:1px solid #53584e;transform:skewY(-18deg);background:repeating-linear-gradient(0deg,transparent 0 13px,rgba(45,52,45,.22) 14px 15px)}
+    .visual-d .shape{width:46%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e9e7df 0 8%,#777f70 9% 24%,#3b453b 25% 26%,#c8cbbd 27% 48%,#70796c 49% 50%,transparent 51%);border:1px solid #4b5449}
+    .project-meta{display:flex;justify-content:space-between;gap:15px;margin-top:16px}.project-title{font-size:21px;letter-spacing:-.05em}.project-type{font:10px var(--mono);text-transform:uppercase;color:var(--muted);text-align:right}
+    .project-note{font-size:12px;line-height:1.6;color:var(--muted);max-width:390px;margin:8px 0 0}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+    .service{padding:25px 22px 15px 0;border-right:1px solid var(--line)}.service:not(:first-child){padding-left:22px}.service:last-child{border:0}
+    .service .index{color:var(--muted)}.service h3{font-size:clamp(22px,2.8vw,36px);letter-spacing:-.06em;font-weight:500;line-height:1.1;margin:55px 0 20px}
+    .service p{font-size:13px;line-height:1.75;color:#5d625a;max-width:300px}.service ul{list-style:none;padding:20px 0 0;margin:0;border-top:1px solid var(--line)}
+    .service li{font:10px var(--mono);text-transform:uppercase;padding:7px 0;color:#565c54}
+    .approach{display:grid;grid-template-columns:1fr 1fr;gap:8vw}.approach-statement{font-size:clamp(32px,5vw,64px);line-height:1.04;letter-spacing:-.075em;margin:0;max-width:650px}
+    .approach-copy{max-width:420px;font-size:14px;line-height:1.85;color:#5d625a;padding-top:8px}.approach-copy p{margin:0 0 18px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw}.about-title{font-size:clamp(48px,8vw,110px);line-height:.9;letter-spacing:-.09em;margin:0;font-weight:500}
+    .about-copy{font-size:14px;line-height:1.85;max-width:470px;color:#555b53}.about-copy p{margin:0 0 18px}
+    .contact{background:var(--ink);color:var(--paper);padding:100px 4.5vw 38px}.contact-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px}
+    .contact h2{font-size:clamp(60px,11vw,150px);line-height:.85;letter-spacing:-.1em;font-weight:500;margin:0 0 65px}
+    .contact-link{font-size:clamp(19px,3vw,34px);letter-spacing:-.05em;border-bottom:1px solid rgba(233,231,223,.45);padding-bottom:8px}
+    .contact-bottom{border-top:1px solid rgba(233,231,223,.3);padding-top:17px;display:flex;justify-content:space-between;gap:20px;color:#a9ada4}.footer-note{font-size:9px}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:760px){.topbar{padding:0 6vw;height:60px}.topmeta{display:none}.nav{gap:14px}.nav a{font-size:9px}.hero{padding:13vh 6vw 7vh;grid-template-columns:1fr;min-height:82vh;gap:45px}.orbital{width:42vw;right:8vw;top:10vh}h1{font-size:29vw;margin:0 0 8vw}.hero-right{padding:0;max-width:420px}.hero-index{margin-top:24px}.section{padding:75px 6vw}.section-head{margin-bottom:35px}.project-grid{gap:38px 14px}.project:nth-child(even){margin-top:60px}.project-title{font-size:16px}.project-type{font-size:8px}.project-note{font-size:11px}.services{grid-template-columns:1fr}.service,.service:not(:first-child){padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.service h3{margin:28px 0 12px}.service ul{display:grid;grid-template-columns:1fr 1fr}.approach,.about-grid{grid-template-columns:1fr;gap:30px}.contact{padding:75px 6vw 28px}.contact-top{display:block}.contact h2{margin-bottom:50px}.contact-link{display:inline-block;margin-bottom:60px}.contact-bottom{flex-wrap:wrap}}
+    @media(max-width:440px){.nav{gap:10px}.nav a{font-size:8px}.project-grid{grid-template-columns:1fr}.project:nth-child(even){margin-top:0}.project-visual{aspect-ratio:1.35}.project-title{font-size:19px}.project-type{font-size:9px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#home" aria-label="RISS home">RISS<span>.</span></a>
+    <div class="topmeta">Independent design practice · Norway / International</div>
+    <nav class="nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main id="home">
+    <section class="hero"><div class="orbital" aria-hidden="true"></div><div class="hero-left"><p class="eyebrow hero-kicker">Independent design practice / Trondheim, Norway</p><h1>RISS</h1><p class="hero-sub">Giving form to ideas, spaces and identities.</p></div><div class="hero-right"><p>RISS works across visual communication, identity, editorial design and spatial concepts. We bring research, structure and visual thinking together to make complex ideas clear and tangible.</p><div class="hero-index"><span class="index">Form · Space · Image · Identity</span><span class="index">01 — 04</span></div></div></section>
+    <section class="section" id="work"><div class="section-head reveal"><h2>Selected work</h2><span class="index">01 / Portfolio</span></div><div class="project-grid">
+      <article class="project reveal"><div class="project-visual visual-a"><div class="shape"></div></div><div class="project-meta"><div class="project-title">Visual communication</div><div class="project-type">Graphic design</div></div><p class="project-note">A selection of promotional and communication design. Replace this placeholder with a specific project and your role.</p></article>
+      <article class="project reveal"><div class="project-visual visual-b"><div class="shape">Aa</div></div><div class="project-meta"><div class="project-title">Identity systems</div><div class="project-type">Brand design</div></div><p class="project-note">Identity, typography and graphic systems developed for a distinct context. Replace with your project details.</p></article>
+      <article class="project reveal"><div class="project-visual visual-c"><div class="shape"></div></div><div class="project-meta"><div class="project-title">Spatial narratives</div><div class="project-type">Spatial concepts</div></div><p class="project-note">Spatial research, diagrams and visual interpretations. Replace with a relevant academic or commissioned project.</p></article>
+      <article class="project reveal"><div class="project-visual visual-d"><div class="shape"></div></div><div class="project-meta"><div class="project-title">Image & material</div><div class="project-type">Photography</div></div><p class="project-note">Photography and image-making exploring material, atmosphere and form. Replace with your own work.</p></article>
+    </div></section>
+    <section class="section" id="services"><div class="section-head reveal"><h2>What I do</h2><span class="index">02 / Services</span></div><div class="services">
+      <article class="service reveal"><span class="index">01 — Identity</span><h3>Identity &<br>visual communication</h3><p>Clear visual languages for practices, projects and cultural initiatives.</p><ul><li>Visual identity</li><li>Graphic systems</li><li>Promotional design</li><li>Art direction</li></ul></article>
+      <article class="service reveal"><span class="index">02 — Editorial</span><h3>Editorial &<br>digital design</h3><p>Thoughtful structures that make information engaging, legible and coherent.</p><ul><li>Publications</li><li>Portfolios & project books</li><li>Digital presentations</li><li>Website & UX/UI design</li></ul></article>
+      <article class="service reveal"><span class="index">03 — Space</span><h3>Spatial &<br>visual concepts</h3><p>Research-led visual tools for communicating places, environments and ideas.</p><ul><li>Architectural graphics</li><li>Spatial diagrams</li><li>Visual documentation</li><li>Photography</li></ul></article>
+    </div></section>
+    <section class="section"><div class="section-head reveal"><h2>Approach</h2><span class="index">03 / Method</span></div><div class="approach"><p class="approach-statement reveal">Look closely.<br>Find the structure.<br>Make it visible.</p><div class="approach-copy reveal"><p>Every project begins with context: what exists, what matters and what needs to be communicated. Research and observation help identify the relationships that give a project its character.</p><p>From there, I develop visual systems, images and spatial narratives that make those relationships legible — with attention to form, material, function and experience.</p></div></div></section>
+    <section class="section" id="about"><div class="section-head reveal"><h2>About RISS</h2><span class="index">04 / Practice</span></div><div class="about-grid"><h3 class="about-title reveal">Across<br>disciplines.<br>With intent.</h3><div class="about-copy reveal"><p>RISS is an independent design practice based in Trondheim, Norway, working with clients and collaborators locally and internationally.</p><p>The practice brings together graphic design, visual research and spatial thinking. Its work moves between image, information and environment — connecting conceptual exploration with clear, purposeful communication.</p><p><strong>RISS is open to selected collaborations, freelance commissions and interdisciplinary projects.</strong></p></div></div></section>
+  </main>
+  <footer class="contact" id="contact"><div class="contact-top"><div><p class="eyebrow" style="color:#a9ada4;margin:0 0 25px">Have a project in mind?</p><h2>Let's make<br>it visible.</h2></div><span class="contact-link">Contact details to be added ↗</span></div><div class="contact-bottom"><span class="footer-note">RISS — Independent Design Practice</span><span class="footer-note">Trondheim, Norway · Working internationally</span><span class="footer-note">© <span id="year"></span> RISS</span></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
