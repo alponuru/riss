@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A spatial reconstruction of Roman Miletus developed through archaeological evidence and Space Syntax analysis.">
+  <meta name="theme-color" content="#e9e7df">
+  <title>Reconstructing Roman Miletus — RISS</title>
+  <style>
+    :root{--paper:#e9e7df;--ink:#1b211e;--muted:#73766f;--line:rgba(27,33,30,.22);--sans:Arial,Helvetica,sans-serif;--mono:"Courier New",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}.topbar{height:68px;padding:0 4.5vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .wordmark{font-size:21px;font-weight:800;letter-spacing:-.09em}.wordmark span{font-weight:400}
+    .topmeta,.nav a,.eyebrow,.index,.caption,.back{font:10px var(--mono);letter-spacing:.09em;text-transform:uppercase}
+    .topmeta{color:var(--muted)}.nav{display:flex;gap:30px}.nav a:hover,.back:hover{opacity:.55}
+    .hero{padding:9vh 4.5vw 5vh;border-bottom:1px solid var(--line)}
+    .hero-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start;margin-bottom:9vh}
+    .eyebrow{color:var(--muted);margin:0}.hero-index{font:10px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:right}
+    h1{font-size:clamp(54px,9.5vw,138px);line-height:.91;letter-spacing:-.09em;font-weight:500;max-width:1120px;margin:0 0 5vh}
+    .hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end}
+    .dek{font-size:clamp(18px,2.1vw,27px);line-height:1.35;letter-spacing:-.04em;max-width:600px;margin:0}
+    .intro{font-size:14px;line-height:1.85;color:#5d625a;max-width:440px;margin:0}
+    .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:22px 4.5vw;border-bottom:1px solid var(--line)}
+    .meta-item span{display:block}.meta-label{font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}.meta-value{font-size:12px;line-height:1.5}
+    .section{padding:105px 4.5vw;border-bottom:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:1fr 2fr;gap:6vw;margin-bottom:48px;align-items:start}
+    .section-head .index{color:var(--muted);padding-top:9px}.section-head h2{font-size:clamp(36px,5.5vw,70px);font-weight:500;letter-spacing:-.075em;line-height:.98;margin:0}
+    .section-copy{font-size:14px;line-height:1.85;color:#5d625a;max-width:650px;margin:0 0 42px auto}
+    figure{margin:0;min-width:0}.figure-image{display:block;width:100%;height:auto;background:#d4d2c8}
+    .caption{display:flex;justify-content:space-between;gap:18px;color:var(--muted);padding-top:12px;line-height:1.55;font-size:9px}
+    .caption span:last-child{text-align:right;white-space:nowrap}
+    .evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px 22px;align-items:start}
+    .evidence-grid figure:first-child{grid-column:1/-1}
+    .reconstruction{margin-top:22px}.reconstruction .figure-image{max-height:860px;object-fit:contain;object-position:center;background:#dedcd2}
+    .analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px 22px;align-items:start}
+    .analysis-grid figure:nth-child(3){grid-column:1/-1;width:78%;margin:0 auto}
+    .analysis-grid figure:nth-child(4){grid-column:1/-1;width:88%;margin:0 auto}
+    .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw}
+    .method-grid h3{font-size:clamp(25px,3vw,38px);font-weight:500;letter-spacing:-.06em;margin:0 0 20px}
+    .method-grid p{font-size:14px;line-height:1.85;color:#5d625a;margin:0 0 15px}
+    .method-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+    .method-list li{padding:13px 0;border-bottom:1px solid var(--line);font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+    .closing{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start}
+    .closing h2{font-size:clamp(38px,6vw,78px);line-height:.95;letter-spacing:-.08em;font-weight:500;margin:0}
+    .closing p{font-size:14px;line-height:1.85;color:#5d625a;max-width:480px;margin:0}
+    .source-note{font-size:11px;line-height:1.7;color:var(--muted);max-width:850px;margin:34px 0 0}
+    footer{padding:30px 4.5vw;display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .back{color:var(--ink)}.footer-note{font:9px var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+    @media(max-width:760px){.topbar{padding:0 6vw;height:60px}.topmeta{display:none}.nav{gap:14px}.nav a{font-size:9px}.hero{padding:8vh 6vw 6vh}.hero-top{margin-bottom:7vh}.hero-bottom,.meta,.section-head,.method-grid,.closing{grid-template-columns:1fr;gap:25px}.hero-index{text-align:left}.meta{padding:20px 6vw;gap:17px}.section{padding:72px 6vw}.section-head{margin-bottom:30px}.section-copy{margin-left:0}.evidence-grid,.analysis-grid{grid-template-columns:1fr;gap:32px}.evidence-grid figure:first-child,.analysis-grid figure:nth-child(3),.analysis-grid figure:nth-child(4){grid-column:auto;width:100%}.caption{font-size:8px}footer{padding:25px 6vw;flex-wrap:wrap}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="index.html" aria-label="RISS home">RISS<span>.</span></a>
+    <div class="topmeta">Independent design practice · Norway / International</div>
+    <nav class="nav" aria-label="Main navigation"><a href="index.html#work">Work</a><a href="index.html#services">Services</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-top"><p class="eyebrow">Spatial research / Archaeological interpretation</p><div class="hero-index">Selected project<br>01 — Miletus / 2023</div></div>
+      <h1>Reconstructing<br>Roman Miletus</h1>
+      <div class="hero-bottom">
+        <p class="dek">From archaeological evidence to the spatial logic of an ancient city.</p>
+        <p class="intro">How can the spatial organisation of a city be investigated when much of its urban fabric is no longer visible? This project explores the Roman-period urban network of Miletus through the synthesis of archaeological material, geophysical research, historical plans and spatial analysis.</p>
+      </div>
+    </section>
+    <section class="meta" aria-label="Project information">
+      <div class="meta-item"><span class="meta-label">Discipline</span><span class="meta-value">Settlement archaeology · Spatial analysis</span></div>
+      <div class="meta-item"><span class="meta-label">Methods</span><span class="meta-value">Urban reconstruction · Space Syntax</span></div>
+      <div class="meta-item"><span class="meta-label">Academic context</span><span class="meta-value">Master's thesis · 2023</span></div>
+    </section>
+    <section class="section">
+      <div class="section-head"><span class="index">01 / Evidence</span><h2>Reading what remains</h2></div>
+      <p class="section-copy">The reconstruction begins with fragmentary traces. Geophysical survey results, topographic information and published archaeological interpretations provide different layers of evidence for understanding the buried and surviving urban landscape.</p>
+      <div class="evidence-grid">
+        <figure><img class="figure-image" src="images/miletus/fig-33-geophysical-survey-data.png" alt="Geophysical survey data from Miletus"><figcaption class="caption"><span>Geophysical survey data</span><span>Figure 33</span></figcaption></figure>
+        <figure><img class="figure-image" src="images/miletus/fig-30-geomagnetic-surveys.png" alt="Geomagnetic surveys at Miletus"><figcaption class="caption"><span>Geomagnetic survey material</span><span>Figure 30</span></figcaption></figure>
+        <figure><img class="figure-image" src="images/miletus/fig-31-topography-magnetic-map.png" alt="Topography and magnetic map of Miletus"><figcaption class="caption"><span>Topography and magnetic data</span><span>Figure 31</span></figcaption></figure>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-head"><span class="index">02 / Reconstruction</span><h2>Making the city legible</h2></div>
+      <p class="section-copy">The available evidence is brought together in a proposed spatial arrangement of Roman Miletus. Rather than treating the plan as a complete record of the ancient city, the reconstruction provides a working model through which its urban structure can be examined.</p>
+      <figure class="reconstruction"><img class="figure-image" src="images/miletus/fig-34-roman-miletus-reconstruction.png" alt="Reconstruction of the spatial arrangement of Roman Miletus"><figcaption class="caption"><span>Reconstruction of the spatial arrangement in Roman Miletus</span><span>Figure 34</span></figcaption></figure>
+    </section>
+    <section class="section">
+      <div class="section-head"><span class="index">03 / Spatial analysis</span><h2>Testing spatial relationships</h2></div>
+      <p class="section-copy">Space Syntax methods are applied to the reconstructed network to investigate how different streets relate to the wider urban system and to their local surroundings. Axial and segment analyses offer complementary ways of examining spatial integration and potential movement patterns.</p>
+      <div class="analysis-grid">
+        <figure><img class="figure-image" src="images/miletus/fig-35-global-axial-integration.png" alt="Global axial integration analysis"><figcaption class="caption"><span>Global axial integration</span><span>Figure 35</span></figcaption></figure>
+        <figure><img class="figure-image" src="images/miletus/fig-36-local-axial-integration.png" alt="Local axial integration analysis"><figcaption class="caption"><span>Local axial integration</span><span>Figure 36</span></figcaption></figure>
+        <figure><img class="figure-image" src="images/miletus/fig-37-local-axial-integration.png" alt="Additional local axial integration analysis"><figcaption class="caption"><span>Local axial integration</span><span>Figure 37</span></figcaption></figure>
+        <figure><img class="figure-image" src="images/miletus/fig-38-segment-analysis.png" alt="Segment analysis of the reconstructed urban network"><figcaption class="caption"><span>Segment analysis</span><span>Figure 38</span></figcaption></figure>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-head"><span class="index">04 / Method</span><h2>From sources to spatial model</h2></div>
+      <div class="method-grid">
+        <div><h3>A layered process</h3><p>The work connects archaeological interpretation with spatial modelling. Evidence from different sources is considered together to develop a coherent, analysable representation of the urban network.</p><p>The analytical stage then examines the reconstructed network at both global and local scales, making it possible to compare patterns of spatial configuration.</p></div>
+        <div><h3>Methods & questions</h3><ul class="method-list"><li>Archaeological evidence synthesis</li><li>Geophysical and topographic interpretation</li><li>Urban network reconstruction</li><li>Axial integration analysis</li><li>Segment analysis</li></ul></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="closing">
+        <h2>Understanding<br>the city through<br>its structure.</h2>
+        <p>The project demonstrates how a carefully qualified reconstruction can become a basis for investigating the spatial relationships of an ancient urban environment. The analytical results indicate potential patterns of accessibility and movement; they should be interpreted as properties of the reconstructed model, not as direct proof of historical routes or behaviour.</p>
+      </div>
+      <p class="source-note">This project draws on archaeological, geophysical and published research material. Individual source credits and reproduction permissions should be retained alongside the relevant figures in the final portfolio presentation.</p>
+    </section>
+  </main>
+  <footer><a class="back" href="index.html#work">← Back to selected work</a><span class="footer-note">RISS — Independent Design Practice</span></footer>
+</body>
+</html>
