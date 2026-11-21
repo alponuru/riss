@@ -109,6 +109,50 @@
       footer{padding:25px 6vw;flex-wrap:wrap}
     }
 
+  
+    /* Second editorial pass: use the left column and rebalance figures */
+    @media(min-width:761px){
+      .section>.section-copy{
+        grid-column:1;
+        grid-row:auto;
+        margin:0;
+        max-width:100%;
+        align-self:start;
+      }
+      .section>.analysis-intro{
+        grid-column:1 / -1;
+        display:grid;
+        grid-template-columns:minmax(190px,.82fr) minmax(0,1.18fr);
+        column-gap:var(--editorial-gap);
+        row-gap:14px;
+        margin:0 0 8px;
+      }
+      .section>.analysis-intro p:first-child{grid-column:1}
+      .section>.analysis-intro p:nth-child(2){grid-column:2}
+      .section>.analysis-grid,
+      .section>.evidence-grid,
+      .section>.reconstruction,
+      .section>figure,
+      .section>.method-grid{
+        grid-column:2;
+      }
+      .evidence-grid{
+        grid-template-columns:1fr 1fr;
+        gap:28px 20px;
+      }
+      .evidence-grid figure:first-child{grid-column:auto}
+      .evidence-grid figure:nth-child(2){grid-column:auto}
+      .evidence-grid figure:nth-child(3){grid-column:1 / -1;width:100%}
+      .reconstruction .figure-image{max-height:650px}
+      .analysis-grid figure:nth-child(3){width:88%}
+    }
+    @media(max-width:760px){
+      .section>.section-copy{margin:0 0 25px}
+      .evidence-grid figure:first-child,
+      .evidence-grid figure:nth-child(2),
+      .evidence-grid figure:nth-child(3){grid-column:auto;width:100%}
+    }
+
   </style>
 </head>
 <body>
