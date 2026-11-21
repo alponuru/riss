@@ -286,7 +286,7 @@
       }
     }
 
-    /* Align section titles and primary figures on the same top line */
+    /* Align each main figure with the section heading, below its small index label */
     @media(min-width:761px){
       .section>.evidence-grid,
       .section>.reconstruction,
@@ -294,6 +294,7 @@
       .segment-section>figure{
         grid-row:1;
         align-self:start;
+        margin-top:35px;
       }
       .section>.section-text,
       .axial-section>.analysis-intro,
