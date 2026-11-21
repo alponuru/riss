@@ -226,9 +226,13 @@
       .section>.analysis-grid,
       .section>.evidence-grid,
       .section>.reconstruction,
-      .section>figure,
-      .section>.method-grid{
+      .section>figure{
         grid-column:2;
+      }
+      /* Text-led sections span the editorial grid: copy left, supporting material right */
+      .section>.method-grid,
+      .section>.interpretation{
+        grid-column:1 / -1;
       }
       .evidence-grid{
         grid-template-columns:1fr 1fr;
