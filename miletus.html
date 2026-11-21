@@ -199,6 +199,42 @@
     }
 
   
+    /* Axial analysis: explanatory text left, analytical figures right */
+    @media(min-width:761px){
+      .axial-layout{
+        grid-column:1 / -1;
+        display:grid;
+        grid-template-columns:minmax(190px,.82fr) minmax(0,1.18fr);
+        column-gap:var(--editorial-gap);
+        align-items:start;
+      }
+      .axial-layout>.analysis-intro{
+        grid-column:1;
+        display:flex;
+        flex-direction:column;
+        gap:22px;
+        margin:0;
+        max-width:none;
+      }
+      .axial-layout>.analysis-intro p{font-size:13px;line-height:1.85}
+      .axial-visuals{grid-column:2;min-width:0}
+      .axial-visuals>.analysis-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+      .axial-visuals .analysis-grid figure:nth-child(3){grid-column:auto;width:100%;margin:0}
+      .axial-visuals .figure-image{width:100%;height:auto}
+      .axial-visuals>.source-note{margin-top:24px}
+    }
+    @media(max-width:760px){
+      .axial-layout{display:flex;flex-direction:column;gap:24px}
+      .axial-layout>.analysis-intro{display:flex;flex-direction:column;gap:18px;margin:0}
+      .axial-visuals{width:100%}
+      .axial-visuals>.analysis-grid{display:grid;grid-template-columns:1fr;gap:26px}
+      .axial-visuals .analysis-grid figure:nth-child(3){grid-column:auto;width:100%;margin:0}
+    }
+
     /* Equal visual height for the paired evidence figures */
     @media(min-width:761px){
       .evidence-grid figure:nth-child(1),
@@ -288,16 +324,20 @@
 
     <section class="section">
       <div class="section-head"><span class="index">04 / Axial analysis</span><h2>Global and local integration</h2></div>
-      <div class="analysis-intro">
-        <p>Axial analysis represents the street system through the fewest and longest lines of sight and movement. Integration measures how easily each line is reached from the others in the network, based on topological steps rather than physical distance.</p>
-        <p>The global measure compares each street with the whole system. Local measures, here R3 and R2, compare streets within a more limited number of steps. Looking at both scales helps distinguish the routes that connect the city as a whole from those that structure movement within nearby areas.</p>
+      <div class="axial-layout">
+        <div class="analysis-intro">
+          <p>Axial analysis represents the street system through the fewest and longest lines of sight and movement. Integration measures how easily each line is reached from the others in the network, based on topological steps rather than physical distance.</p>
+          <p>The global measure compares each street with the whole system. Local measures, here R3 and R2, compare streets within a more limited number of steps. Looking at both scales helps distinguish the routes that connect the city as a whole from those that structure movement within nearby areas.</p>
+        </div>
+        <div class="axial-visuals">
+          <div class="analysis-grid">
+            <figure><img class="figure-image" src="images/miletus/fig-35-global-axial-integration.png" alt="Global axial integration graph for Roman Miletus"><figcaption class="caption"><span>Global axial integration · R(n)</span><span>Figure 35 · Author's analysis</span></figcaption></figure>
+            <figure><img class="figure-image" src="images/miletus/fig-36-local-axial-integration.png" alt="Local axial integration graph at radius 3"><figcaption class="caption"><span>Local axial integration · R3</span><span>Figure 36 · Author's analysis</span></figcaption></figure>
+            <figure><img class="figure-image" src="images/miletus/fig-37-local-axial-integration.png" alt="Local axial integration graph at radius 2"><figcaption class="caption"><span>Local axial integration · R2</span><span>Figure 37 · Author's analysis</span></figcaption></figure>
+          </div>
+          <p class="source-note">The global graph highlights the north–south and northern east–west axes as highly integrated within the reconstructed network. At the local scale, the pattern shifts: the east–west axis and groups of streets around Humeitepe become more prominent. These are measures of configurational accessibility, not direct observations of ancient pedestrian traffic.</p>
+        </div>
       </div>
-      <div class="analysis-grid">
-        <figure><img class="figure-image" src="images/miletus/fig-35-global-axial-integration.png" alt="Global axial integration graph for Roman Miletus"><figcaption class="caption"><span>Global axial integration · R(n)</span><span>Figure 35 · Author's analysis</span></figcaption></figure>
-        <figure><img class="figure-image" src="images/miletus/fig-36-local-axial-integration.png" alt="Local axial integration graph at radius 3"><figcaption class="caption"><span>Local axial integration · R3</span><span>Figure 36 · Author's analysis</span></figcaption></figure>
-        <figure><img class="figure-image" src="images/miletus/fig-37-local-axial-integration.png" alt="Local axial integration graph at radius 2"><figcaption class="caption"><span>Local axial integration · R2</span><span>Figure 37 · Author's analysis</span></figcaption></figure>
-      </div>
-      <p class="source-note">The global graph highlights the north–south and northern east–west axes as highly integrated within the reconstructed network. At the local scale, the pattern shifts: the east–west axis and groups of streets around Humeitepe become more prominent. These are measures of configurational accessibility, not direct observations of ancient pedestrian traffic.</p>
     </section>
 
     <section class="section">
