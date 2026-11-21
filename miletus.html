@@ -88,9 +88,16 @@
     .interpretation-copy p{margin-bottom:16px}
     .section:has(.interpretation)>.source-note{max-width:900px;margin-top:42px}
 
+<<<<<<< HEAD
     /* Research objective: preserve the editorial columns and clarify reading order */
     .objective-section>.analysis-intro{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);column-gap:var(--editorial-gap);row-gap:14px;margin:0;max-width:none}
     .objective-section>.analysis-intro p{font-size:13px;line-height:1.85}
+=======
+    /* Research objective: two explanatory paragraphs left, analytical scope right */
+    .objective-layout{grid-column:2;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);column-gap:var(--editorial-gap);align-items:start}
+    .objective-layout>.analysis-intro{grid-column:1;display:grid;grid-template-columns:1fr;gap:22px;margin:0;max-width:none}
+    .objective-layout>.analysis-intro p{font-size:13px;line-height:1.85}
+>>>>>>> parent of e2cfb30 (Align objective text beneath title and scope at right)
     .objective-paragraph-label{display:block;margin:0 0 12px;color:var(--muted);font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
     .objective-section>.objective-scope{grid-column:2;margin:22px 0 0;padding-top:14px;border-top:1px solid var(--line);max-width:100%}
     .objective-scope-label{display:block;margin-bottom:9px;color:var(--muted);font:9px var(--mono);letter-spacing:.11em;text-transform:uppercase}
