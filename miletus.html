@@ -286,6 +286,23 @@
       }
     }
 
+    /* Align section titles and primary figures on the same top line */
+    @media(min-width:761px){
+      .section>.evidence-grid,
+      .section>.reconstruction,
+      .axial-section>.analysis-grid,
+      .segment-section>figure{
+        grid-row:1;
+        align-self:start;
+      }
+      .section>.section-text,
+      .axial-section>.analysis-intro,
+      .segment-section>.analysis-intro{
+        grid-row:2;
+        align-self:start;
+      }
+    }
+
     /* Hero follows the same editorial grid: title and copy left, image right */
     @media(min-width:761px){
       .hero{
