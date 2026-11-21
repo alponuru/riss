@@ -286,24 +286,49 @@
       }
     }
 
-    /* Keep headings and explanatory copy together in the left column,
-       while the main figure spans the full content height on the right. */
+    /* One left-column wrapper keeps each heading and its copy in a single grid row.
+       The figure sits alongside it, so image height cannot stretch the text spacing. */
     @media(min-width:761px){
+      .section>.section-left{
+        grid-column:1;
+        grid-row:1;
+        display:flex;
+        flex-direction:column;
+        align-self:start;
+        gap:18px;
+        min-width:0;
+      }
+      .section-left>.section-head{
+        display:block;
+        margin:0;
+      }
+      .section-left>.section-head .index{margin:2px 0 18px}
+      .section-left>.section-head h2{margin:0}
+      .section-left>.section-text,
+      .section-left>.analysis-intro{
+        display:flex;
+        flex-direction:column;
+        gap:16px;
+        margin:0;
+        min-width:0;
+      }
+      .section-left .section-copy,
+      .section-left .source-note{margin:0;max-width:none}
       .section>.evidence-grid,
       .section>.reconstruction,
       .axial-section>.analysis-grid,
       .segment-section>figure{
-        grid-row:1 / span 2;
+        grid-column:2;
+        grid-row:1;
         align-self:start;
         margin-top:35px;
       }
-      .section>.section-text,
-      .axial-section>.analysis-intro,
-      .segment-section>.analysis-intro{
-        grid-row:2;
-        align-self:start;
-        margin-top:0;
-      }
+    }
+    @media(max-width:760px){
+      .section-left{display:block}
+      .section-left>.section-head{margin-bottom:25px}
+      .section-left>.section-text,
+      .section-left>.analysis-intro{display:flex;flex-direction:column;gap:18px;margin:0 0 25px}
     }
 
     /* Hero follows the same editorial grid: title and copy left, image right */
@@ -394,10 +419,12 @@
     </section>
 
     <section class="section">
+      <div class="section-left">
       <div class="section-head"><span class="index">01 / Evidence</span><h2>Reading the archaeological record</h2></div>
       <div class="section-text">
       <p class="section-copy"><span class="objective-paragraph-label">01 — Evidence base</span>The street network cannot be read from the visible remains alone. The reconstruction draws on several types of evidence: geomagnetic surveys that reveal buried structures, topographic and magnetic data around the former harbour, and systematic archaeological survey that maps the distribution of architectural ceramics and other finds. Each source records a different aspect of the city and has to be considered in relation to the others.</p>
       <p class="source-note"><span class="objective-paragraph-label">02 — Survey data</span>These figures are reproduced from the thesis, where their original sources are identified. The survey panels in Figure 33 show the distribution of architectural ceramics, terra sigillata and tesserae; they are archaeological survey data rather than a direct street plan.</p>
+      </div>
       </div>
       <div class="evidence-grid">
         <figure><img class="figure-image" src="images/miletus/fig-30-geomagnetic-surveys.png" alt="Results of geomagnetic surveys carried out in Miletus between 1997 and 2003"><figcaption class="caption"><span>Geomagnetic surveys, 1997–2003</span><span>Figure 30 · Source: Stümpel & Erkul, 2008</span></figcaption></figure>
@@ -407,10 +434,12 @@
     </section>
 
     <section class="section">
+      <div class="section-left">
       <div class="section-head"><span class="index">02 / Reconstruction</span><h2>Reconstructing the city plan</h2></div>
       <div class="section-text">
       <p class="section-copy"><span class="objective-paragraph-label">01 — Reconstruction basis</span>The Roman-period plan was redrawn by synthesising archaeological evidence and published research on the development of Miletus. Weber's detailed account was a particularly important source for understanding changes in the urban layout. Earlier plans and more recent archaeological publications provided additional evidence, including the locations of streets, public buildings, harbour areas and city boundaries. The result is a working reconstruction for spatial analysis, not a claim that every street or building location is certain.</p>
       <p class="source-note"><span class="objective-paragraph-label">02 — Sources and attribution</span>Figure 34. Reconstruction by the author, based principally on Weber (2007, p. 239) and informed by other archaeological publications cited in the thesis, including Maischberger et al. (2009), Herda (2011), Bumke (2011), Brückner et al. (2014, 2017), Niewöhner (2015), Şahin (2014), Huy & Weissová (2020) and Thurn (2020).</p>
+      </div>
       </div>
       <figure class="reconstruction"><img class="figure-image" src="images/miletus/fig-34-roman-miletus-reconstruction.png" alt="Author's reconstruction (Uluçay, 2023, p. 65) of the spatial arrangement of Roman Miletus"></figure>
     </section>
@@ -430,11 +459,13 @@
     </section>
 
     <section class="section axial-section">
+      <div class="section-left">
       <div class="section-head"><span class="index">04 / Axial analysis</span><h2>Global and local integration</h2></div>
       <div class="analysis-intro">
         <p><span class="objective-paragraph-label">01 — Axial representation</span>Axial analysis represents the street system through the fewest and longest lines of sight and movement. Integration measures how easily each line is reached from the others in the network, based on topological steps rather than physical distance.</p>
         <p><span class="objective-paragraph-label">02 — Global and local scales</span>The global measure compares each street with the whole system. Local measures restrict the comparison to a set number of topological steps: R3 considers connections up to three steps away, while R2 considers those up to two. These radii are based on network depth, not metres. Comparing them helps distinguish routes that connect the city as a whole from those that structure movement within nearby areas.</p>
       <p class="source-note"><span class="objective-paragraph-label">03 — Interpreting the results</span>The global graph highlights the north–south and northern east–west axes as highly integrated within the reconstructed network. At the local scale, the pattern shifts: the east–west axis and groups of streets around Humeitepe become more prominent. These are measures of configurational accessibility, not direct observations of ancient pedestrian traffic.</p>
+      </div>
       </div>
       <div class="analysis-grid">
         <figure><img class="figure-image" src="images/miletus/fig-35-global-axial-integration.png" alt="Global axial integration graph for Roman Miletus"><figcaption class="caption"><span>Global axial integration · R(n)</span><span>Figure 35 · Author's analysis</span></figcaption></figure>
@@ -444,13 +475,15 @@
     </section>
 
     <section class="section segment-section">
+      <div class="section-left">
       <div class="section-head"><span class="index">05 / Segment analysis</span><h2>Movement at different scales</h2></div>
       <div class="analysis-intro">
         <p><span class="objective-paragraph-label">01 — Segment representation</span>Segment analysis divides the network into individual street segments and measures their relationship to possible journeys through the system. Two measures are used: integration and choice.</p>
         <p><span class="objective-paragraph-label">02 — Integration and choice</span>Integration measures how accessible a segment is in relation to other segments within a specified radius, expressing its potential for to-movement. Choice measures how often a segment falls on the shortest routes between other segments, indicating its potential for through-movement. Comparing radii from 100 to 1,000 metres allows the analysis to consider broader and more local movement scales.</p>
       <p class="source-note"><span class="objective-paragraph-label">03 — Interpreting the results</span>The 1,000 m choice graph identifies the Processional Street and connected routes around the harbour gates and agora as important potential through-routes in the model. The thesis also compares integration and choice at 800, 400, 250 and 100 m radii; the selected figure here illustrates the broader-scale choice result.</p>
       </div>
-      <figure><img class="figure-image" src="images/miletus/fig-38-segment-analysis.png" alt="Segment choice analysis for the Roman Miletus network at a 1000 metre radius"><figcaption class="caption"><span>Segment choice · 1,000 m radius</span><span>Figure 38 · Author's analysis</span></figcaption></figure>
+      </div>
+      <figure><img class="figure-image" src="images/miletus/fig-38-segment-analysis.png alt="Segment choice analysis for the Roman Miletus network at a 1000 metre radius"><figcaption class="caption"><span>Segment choice · 1,000 m radius</span><span>Figure 38 · Author's analysis</span></figcaption></figure>
 
     </section>
 
