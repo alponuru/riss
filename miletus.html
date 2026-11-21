@@ -155,7 +155,8 @@
   
     /* Tighten the heading-to-text spacing in the evidence and reconstruction sections */
     @media(min-width:761px){
-      .section:has(>.section-text)>.section-head{margin-bottom:18px}
+      .section:has(>.section-text){row-gap:8px}
+      .section:has(>.section-text)>.section-head{margin-bottom:0}
     }
 
     /* Second editorial pass: use the left column and rebalance figures */
