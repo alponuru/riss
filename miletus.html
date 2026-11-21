@@ -153,6 +153,11 @@
     }
 
   
+    /* Tighten the heading-to-text spacing in the evidence and reconstruction sections */
+    @media(min-width:761px){
+      .section:has(>.section-text)>.section-head{margin-bottom:18px}
+    }
+
     /* Second editorial pass: use the left column and rebalance figures */
     @media(min-width:761px){
       .section>.section-text{
