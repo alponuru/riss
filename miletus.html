@@ -88,16 +88,40 @@
     .interpretation-copy p{margin-bottom:16px}
     .section:has(.interpretation)>.source-note{max-width:900px;margin-top:42px}
 
-<<<<<<< HEAD
-    /* Research objective: preserve the editorial columns and clarify reading order */
-    .objective-section>.analysis-intro{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);column-gap:var(--editorial-gap);row-gap:14px;margin:0;max-width:none}
-    .objective-section>.analysis-intro p{font-size:13px;line-height:1.85}
-=======
-    /* Research objective: two explanatory paragraphs left, analytical scope right */
-    .objective-layout{grid-column:2;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);column-gap:var(--editorial-gap);align-items:start}
-    .objective-layout>.analysis-intro{grid-column:1;display:grid;grid-template-columns:1fr;gap:22px;margin:0;max-width:none}
-    .objective-layout>.analysis-intro p{font-size:13px;line-height:1.85}
->>>>>>> parent of e2cfb30 (Align objective text beneath title and scope at right)
+    /* Research objective: explanatory text below the title, scope in the right column */
+    @media(min-width:761px){
+      .objective-section>.objective-layout{
+        grid-column:1 / -1;
+        display:grid;
+        grid-template-columns:minmax(190px,.82fr) minmax(0,1.18fr);
+        column-gap:var(--editorial-gap);
+        align-items:start;
+      }
+      .objective-layout>.analysis-intro{
+        grid-column:1;
+        display:flex;
+        flex-direction:column;
+        gap:22px;
+        margin:0;
+        max-width:none;
+      }
+      .objective-layout>.analysis-intro p{font-size:13px;line-height:1.85}
+      .objective-layout>.objective-scope{
+        grid-column:2;
+        margin:0;
+        padding-top:0;
+        border-top:0;
+        max-width:100%;
+      }
+    }
+    .objective-paragraph-label{display:block;margin:0 0 12px;color:var(--muted);font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+    .objective-scope-label{display:block;margin-bottom:9px;color:var(--muted);font:9px var(--mono);letter-spacing:.11em;text-transform:uppercase}
+    .objective-scope p{margin:0;color:#5d625a;font-size:12px;line-height:1.8}
+    @media(max-width:760px){
+      .objective-section>.objective-layout{display:grid;grid-template-columns:1fr;gap:22px}
+      .objective-layout>.analysis-intro{display:flex;flex-direction:column;gap:20px;margin:0}
+      .objective-layout>.objective-scope{margin:0;padding-top:14px;border-top:1px solid var(--line)}
+    }
     .objective-paragraph-label{display:block;margin:0 0 12px;color:var(--muted);font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
     .objective-section>.objective-scope{grid-column:2;margin:22px 0 0;padding-top:14px;border-top:1px solid var(--line);max-width:100%}
     .objective-scope-label{display:block;margin-bottom:9px;color:var(--muted);font:9px var(--mono);letter-spacing:.11em;text-transform:uppercase}
@@ -250,13 +274,15 @@
 
     <section class="section objective-section">
       <div class="section-head"><span class="index">03 / Research objective</span><h2>Movement potential and spatial configuration</h2></div>
-      <div class="analysis-intro">
-        <p><span class="objective-paragraph-label">01 — Analytical approach</span>The purpose of the spatial analysis is to investigate the movement patterns potentially enabled, facilitated or constrained by the physical configuration of the city. Rather than attempting to reconstruct actual pedestrian behaviour, the study examines the spatial opportunities and limitations embedded in the reconstructed urban layout.</p>
-        <p><span class="objective-paragraph-label">02 — Interpretation</span>By comparing the movement potentials identified through Space Syntax with available historical and archaeological evidence, the analysis explores the extent to which the spatial configuration corresponds with, extends or challenges existing interpretations of urban movement. This approach also makes it possible to consider spatial relationships that may not be directly documented in the historical record.</p>
-      </div>
-      <div class="objective-scope">
-        <span class="objective-scope-label">Analytical scope</span>
-        <p>The analytical results describe configurational properties of the reconstructed urban network, not observed patterns of historical behaviour. They provide an independent perspective from which to evaluate the possible role of spatial organisation in shaping movement through Roman Miletus.</p>
+      <div class="objective-layout">
+        <div class="analysis-intro">
+          <p><span class="objective-paragraph-label">01 — Analytical approach</span>The purpose of the spatial analysis is to investigate the movement patterns potentially enabled, facilitated or constrained by the physical configuration of the city. Rather than attempting to reconstruct actual pedestrian behaviour, the study examines the spatial opportunities and limitations embedded in the reconstructed urban layout.</p>
+          <p><span class="objective-paragraph-label">02 — Interpretation</span>By comparing the movement potentials identified through Space Syntax with available historical and archaeological evidence, the analysis explores the extent to which the spatial configuration corresponds with, extends or challenges existing interpretations of urban movement. This approach also makes it possible to consider spatial relationships that may not be directly documented in the historical record.</p>
+        </div>
+        <div class="objective-scope">
+          <span class="objective-scope-label">Analytical scope</span>
+          <p>The analytical results describe configurational properties of the reconstructed urban network, not observed patterns of historical behaviour. They provide an independent perspective from which to evaluate the possible role of spatial organisation in shaping movement through Roman Miletus.</p>
+        </div>
       </div>
     </section>
 
