@@ -153,6 +153,35 @@
       .evidence-grid figure:nth-child(3){grid-column:auto;width:100%}
     }
 
+  
+    /* Equal visual height for the paired evidence figures */
+    @media(min-width:761px){
+      .evidence-grid figure:nth-child(1),
+      .evidence-grid figure:nth-child(2){
+        display:flex;
+        flex-direction:column;
+        min-width:0;
+      }
+      .evidence-grid figure:nth-child(1) .figure-image,
+      .evidence-grid figure:nth-child(2) .figure-image{
+        height:clamp(210px,24vw,340px);
+        width:100%;
+        object-fit:contain;
+        background:#dedcd2;
+      }
+      .evidence-grid figure:nth-child(1) .caption,
+      .evidence-grid figure:nth-child(2) .caption{
+        min-height:34px;
+        align-items:flex-start;
+      }
+    }
+    @media(max-width:760px){
+      .evidence-grid figure:nth-child(1) .figure-image,
+      .evidence-grid figure:nth-child(2) .figure-image{
+        height:auto;
+      }
+    }
+
   </style>
 </head>
 <body>
