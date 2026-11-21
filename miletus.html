@@ -286,13 +286,14 @@
       }
     }
 
-    /* Align each main figure with the section heading, below its small index label */
+    /* Keep headings and explanatory copy together in the left column,
+       while the main figure spans the full content height on the right. */
     @media(min-width:761px){
       .section>.evidence-grid,
       .section>.reconstruction,
       .axial-section>.analysis-grid,
       .segment-section>figure{
-        grid-row:1;
+        grid-row:1 / span 2;
         align-self:start;
         margin-top:35px;
       }
@@ -301,6 +302,7 @@
       .segment-section>.analysis-intro{
         grid-row:2;
         align-self:start;
+        margin-top:0;
       }
     }
 
