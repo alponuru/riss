@@ -50,6 +50,65 @@
     .back{color:var(--ink)}.footer-note{font:9px var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
     @media(max-width:760px){.hero-image{margin-top:5vh}.topbar{padding:0 6vw;height:60px}.topmeta{display:none}.nav{gap:14px}.nav a{font-size:9px}.hero{padding:8vh 6vw 6vh}.hero-top{margin-bottom:5vh}.hero-bottom,.meta,.section-head,.method-grid,.interpretation,.analysis-intro{grid-template-columns:1fr;gap:22px}.hero-index{text-align:left}.hero-photo img{height:48vh}.meta{padding:20px 6vw;gap:17px}.section{padding:72px 6vw}.section-head{margin-bottom:28px}.section-copy{margin-left:0}.evidence-grid,.analysis-grid{grid-template-columns:1fr;gap:30px}.evidence-grid figure:first-child,.analysis-grid figure:nth-child(3){grid-column:auto;width:100%}.caption{font-size:8px}footer{padding:25px 6vw;flex-wrap:wrap}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  
+    /* RISS editorial refinement — balanced text/image composition */
+    :root{--editorial-gap:5.2vw;--section-pad:clamp(64px,8vw,104px)}
+    .hero{padding:7vh 5vw 5vh}
+    .hero-top{margin-bottom:5vh}
+    h1{font-size:clamp(56px,8.2vw,118px);line-height:.94;letter-spacing:-.082em;max-width:1040px;margin-bottom:3.5vh}
+    .hero-bottom{grid-template-columns:1fr 1fr;gap:var(--editorial-gap);align-items:start}
+    .dek{font-size:clamp(20px,2vw,25px);line-height:1.32;max-width:520px}
+    .intro{font-size:13px;line-height:1.85;max-width:540px}
+    .hero-photo{margin:5vh 0 0}
+    .hero-photo img{height:min(58vh,580px);object-fit:cover;object-position:center 48%}
+    .meta{padding:22px 5vw;gap:var(--editorial-gap)}
+    .section{display:grid;grid-template-columns:minmax(190px,.82fr) minmax(0,1.18fr);column-gap:var(--editorial-gap);row-gap:26px;padding:var(--section-pad) 5vw}
+    .section>.section-head{grid-column:1;display:block;margin:0;position:relative}
+    .section>.section-head .index{display:block;padding:0;margin:2px 0 22px}
+    .section>.section-head h2{font-size:clamp(32px,3.8vw,49px);line-height:1.02;letter-spacing:-.065em;max-width:430px}
+    .section>:not(.section-head){grid-column:2}
+    .section-copy{font-size:13px;line-height:1.85;max-width:650px;margin:0 0 8px}
+    .evidence-grid{gap:30px 20px;margin-top:2px}
+    .evidence-grid figure:first-child{grid-column:1/-1}
+    .figure-image{width:100%;height:auto;object-fit:contain}
+    .reconstruction{margin-top:0}
+    .reconstruction .figure-image{max-height:760px}
+    .caption{font-size:9px;line-height:1.5;padding-top:10px}
+    .source-note{font-size:10px;line-height:1.75;margin-top:6px}
+    .analysis-intro{gap:26px;margin:0 0 12px}
+    .analysis-intro p,.method-grid p,.interpretation-copy p{font-size:13px;line-height:1.82}
+    .analysis-grid{gap:32px 20px}
+    .analysis-grid figure:nth-child(3){width:82%}
+    .method-grid{gap:34px}
+    .method-grid h3{font-size:clamp(25px,2.7vw,34px);margin-bottom:16px}
+    .method-list li{padding:12px 0;font-size:9px}
+    .section:has(.interpretation){display:block;padding-top:clamp(70px,9vw,110px);padding-bottom:clamp(70px,9vw,110px)}
+    .interpretation{grid-template-columns:.9fr 1.1fr;gap:var(--editorial-gap)}
+    .interpretation h2{font-size:clamp(40px,5vw,66px)}
+    .interpretation-copy p{margin-bottom:16px}
+    .section:has(.interpretation)>.source-note{max-width:900px;margin-top:42px}
+    footer{padding:28px 5vw}
+    @media(max-width:760px){
+      .hero{padding:7vh 6vw 5vh}
+      h1{font-size:clamp(48px,11.5vw,78px)}
+      .hero-bottom{grid-template-columns:1fr;gap:18px}
+      .hero-photo img{height:46vh;min-height:260px}
+      .meta{padding:20px 6vw;gap:16px}
+      .section{display:block;padding:66px 6vw}
+      .section>.section-head{margin-bottom:25px}
+      .section>.section-head .index{margin-bottom:13px}
+      .section>.section-head h2{font-size:clamp(32px,8vw,44px);max-width:540px}
+      .section>:not(.section-head){margin-top:0}
+      .section-copy{margin:0 0 25px}
+      .evidence-grid,.analysis-grid{grid-template-columns:1fr;gap:26px}
+      .evidence-grid figure:first-child,.analysis-grid figure:nth-child(3){grid-column:auto;width:100%}
+      .analysis-intro,.method-grid,.interpretation{grid-template-columns:1fr;gap:18px}
+      .method-grid{gap:30px}
+      .section:has(.interpretation){padding:66px 6vw}
+      .section:has(.interpretation)>.source-note{margin-top:28px}
+      footer{padding:25px 6vw;flex-wrap:wrap}
+    }
+
   </style>
 </head>
 <body>
