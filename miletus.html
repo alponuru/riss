@@ -155,12 +155,20 @@
   
     /* Second editorial pass: use the left column and rebalance figures */
     @media(min-width:761px){
-      .section>.section-copy{
+      .section>.section-text{
         grid-column:1;
-        grid-row:auto;
+        grid-row:2;
+        display:flex;
+        flex-direction:column;
+        gap:18px;
         margin:0;
         max-width:100%;
         align-self:start;
+      }
+      .section-text>.section-copy,
+      .section-text>.source-note{
+        margin:0;
+        max-width:100%;
       }
       .section>.analysis-intro{
         grid-column:1 / -1;
@@ -227,7 +235,7 @@
       .analysis-grid figure:nth-child(3){width:88%}
     }
     @media(max-width:760px){
-      .section>.section-copy{margin:0 0 25px}
+      .section>.section-text{display:flex;flex-direction:column;gap:18px;margin:0 0 25px}
       .evidence-grid figure:first-child,
       .evidence-grid figure:nth-child(2),
       .evidence-grid figure:nth-child(3){grid-column:auto;width:100%}
@@ -291,20 +299,24 @@
 
     <section class="section">
       <div class="section-head"><span class="index">01 / Evidence</span><h2>Reading the archaeological record</h2></div>
+      <div class="section-text">
       <p class="section-copy">The street network cannot be read from the visible remains alone. The reconstruction draws on several types of evidence: geomagnetic surveys that reveal buried structures, topographic and magnetic data around the former harbour, and systematic archaeological survey that maps the distribution of architectural ceramics and other finds. Each source records a different aspect of the city and has to be considered in relation to the others.</p>
+      <p class="source-note">These figures are reproduced from the thesis, where their original sources are identified. The survey panels in Figure 33 show the distribution of architectural ceramics, terra sigillata and tesserae; they are archaeological survey data rather than a direct street plan.</p>
+      </div>
       <div class="evidence-grid">
         <figure><img class="figure-image" src="images/miletus/fig-30-geomagnetic-surveys.png" alt="Results of geomagnetic surveys carried out in Miletus between 1997 and 2003"><figcaption class="caption"><span>Geomagnetic surveys, 1997–2003</span><span>Figure 30 · Source: Stümpel & Erkul, 2008</span></figcaption></figure>
         <figure><img class="figure-image" src="images/miletus/fig-31-topography-magnetic-map.png" alt="Topographical relief and magnetic map of Humeitepe and Lion Harbour"><figcaption class="caption"><span>Humeitepe and Lion Harbour</span><span>Figure 31 · Source: Brückner et al., 2014a</span></figcaption></figure>
         <figure><img class="figure-image" src="images/miletus/fig-33-geophysical-survey-data.png" alt="Survey areas and distributions of architectural ceramics, terra sigillata and tesserae"><figcaption class="caption"><span>Archaeological survey distributions, 2014–2015</span><span>Figure 33 · Source: Huy & Weissová, 2020</span></figcaption></figure>
       </div>
-      <p class="source-note">These figures are reproduced from the thesis, where their original sources are identified. The survey panels in Figure 33 show the distribution of architectural ceramics, terra sigillata and tesserae; they are archaeological survey data rather than a direct street plan.</p>
     </section>
 
     <section class="section">
       <div class="section-head"><span class="index">02 / Reconstruction</span><h2>Reconstructing the city plan</h2></div>
+      <div class="section-text">
       <p class="section-copy">The Roman-period plan was redrawn by synthesising archaeological evidence and published research on the development of Miletus. Weber's detailed account was a particularly important source for understanding changes in the urban layout. Earlier plans and more recent archaeological publications provided additional evidence, including the locations of streets, public buildings, harbour areas and city boundaries. The result is a working reconstruction for spatial analysis, not a claim that every street or building location is certain.</p>
-      <figure class="reconstruction"><img class="figure-image" src="images/miletus/fig-34-roman-miletus-reconstruction.png" alt="Author's reconstruction (Uluçay, 2023, p. 65) of the spatial arrangement of Roman Miletus"></figure>
       <p class="source-note">Figure 34. Reconstruction by the author, based principally on Weber (2007, p. 239) and informed by other archaeological publications cited in the thesis, including Maischberger et al. (2009), Herda (2011), Bumke (2011), Brückner et al. (2014, 2017), Niewöhner (2015), Şahin (2014), Huy & Weissová (2020) and Thurn (2020).</p>
+      </div>
+      <figure class="reconstruction"><img class="figure-image" src="images/miletus/fig-34-roman-miletus-reconstruction.png" alt="Author's reconstruction (Uluçay, 2023, p. 65) of the spatial arrangement of Roman Miletus"></figure>
     </section>
 
     <section class="section objective-section">
