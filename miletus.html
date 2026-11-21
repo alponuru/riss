@@ -88,8 +88,8 @@
     .interpretation-copy p{margin-bottom:16px}
     .section:has(.interpretation)>.source-note{max-width:900px;margin-top:42px}
 
-    /* Research objective: two explanatory paragraphs left, analytical scope right */
-    .objective-layout{grid-column:2;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);column-gap:var(--editorial-gap);align-items:start}
+    /* Research objective: both explanatory paragraphs below the title on the left; scope on the right */
+    .objective-layout{grid-column:1 / -1;display:grid;grid-template-columns:minmax(190px,.82fr) minmax(0,1.18fr);column-gap:var(--editorial-gap);align-items:start}
     .objective-layout>.analysis-intro{grid-column:1;display:grid;grid-template-columns:1fr;gap:22px;margin:0;max-width:none}
     .objective-layout>.analysis-intro p{font-size:13px;line-height:1.85}
     .objective-paragraph-label{display:block;margin:0 0 12px;color:var(--muted);font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
